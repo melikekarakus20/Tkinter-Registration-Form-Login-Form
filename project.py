@@ -2,6 +2,9 @@ from tkinter import *
 root = Tk()
 root.geometry("500x300")
 
+def getvals():
+    print("Accepted")
+
 Label(root, text="Python Registratialion Form", font="ar 15 bold").grid(row=0, column=3)
 
 name = Label(root, text="Name")
@@ -23,13 +26,16 @@ emergencyvalue = StringVar
 paymentmoodvalue = StringVar
 checkvalue = IntVar
 
-nameEntry = Entry(root, textvariable = namevalue)
-phoneEntry = Entry(root, textvariable = phonevalue)
-genderEntry = Entry(root, textvariable = gendervalue)
-emergencyEntry = Entry(root, textvariable = emergencyvalue)
-paymentEntry = Entry(root, textvariable = paymentmoodvalue)
-checkEntry = Entry(root, textvariable = checkvalue)
+#Creating entry field
+nameentry = Entry(root, textvariable = namevalue)
+phoneentry = Entry(root, textvariable = phonevalue)
+genderentry = Entry(root, textvariable = gendervalue)
+emergencyentry = Entry(root, textvariable = emergencyvalue)
+paymentmoodentry = Entry(root, textvariable = paymentmoodvalue)
 
+checkentry = Entry(root, textvariable = checkvalue)
+
+#Packing entry field
 nameentry.grid(row=1, column=3)
 phoneentry.grid(row=2, column=3)
 genderentry.grid(row=3, column=3)
@@ -37,9 +43,11 @@ emergencyentry.grid(row=4, column=3)
 paymentmoodentry.grid(row=5, column=3)
 nameentry.grid(row=5, column=3)
 
+#Creating Checkbox
+checkbtn = Checkbutton(text="Remember me?", variable = checkvalue)
+checkbtn.grid(row=6, column= 3)
 
-
-
-
+#Submit Button
+Button(text="Submit",command=getvals).grid(row=7, column=3)
 
 root.mainloop()
